@@ -40,10 +40,10 @@ Func _main()
 	; initialize shellcode as a hex string
 	$shellcode = "0x" & _
 	"FF35 00000000" & _  ; push DWORD PTR 0x0 (parameter 3)
-	"FF35 00000000" & _	 ; push DWORD PTR 0x0 (parameter 2)
+	"FF35 00000000" & _  ; push DWORD PTR 0x0 (parameter 2)
 	"FF35 00000000" & _  ; push DWORD PTR 0x0 (parameter 1)
 	"B8   00000000" & _  ; push eAX, remote_function
-	"FFD0" & _			 ; call eAX
+	"FFD0" & _	     ; call eAX
 	"5B" & _             ; pop eBX
 	"5A" & _             ; pop eDX
 	"59" & _             ; pop eCX
